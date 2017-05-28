@@ -1,4 +1,3 @@
-var attachFastClick = require('fastclick');
 let wai = require('web-audio-ios');
 let Random = require('random-js');
 let Soundfont = require('soundfont-player');
