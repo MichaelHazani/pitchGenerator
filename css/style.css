@@ -1,0 +1,162 @@
+/*@media only screen 
+and (min-device-width : 300px) 
+and (max-device-width : 667px) 
+and (orientation : portrait) { 
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c5deea+0,8abbd7+31,066dab+100;Web+2.0+Blue+3D+%231 */
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    background-image: -webkit-linear-gradient(top, #edecec, #cecbc9);
+    background-image: linear-gradient(top, #edecec, #cecbc9);
+    background-size: 2200px;
+    color: #222;
+}
+
+h2 {
+    text-shadow: 2px 2px rgba(0, 0, 0, .3);
+    font-weight: 400;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 60px;
+    color: #444;
+}
+
+#overlay {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    opacity: .98;
+    background-color: #777;
+    bottom: 0;
+    left: 0;
+    z-index: 55;
+}
+
+#btn-unlock {
+    background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+    background-image: linear-gradient(top, #f4f1ee, #fff);
+    border-radius: 50%;
+    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+    font-size: 1.5em;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    position: absolute;
+    z-index: 88;
+    width: 120px;
+    height: 120px;
+}
+
+#btn-play {
+    position: relative;
+    width: 120px;
+    -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 400;
+}
+
+#btn-play-cont {
+    width: 100%
+}
+
+.playbutton {
+    margin-top: 30px;
+    size: 200%;
+}
+
+
+/*button from http://codepen.io/yesilfasulye/pen/iGHru*/
+
+#btn-play {
+    background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+    background-image: linear-gradient(top, #f4f1ee, #fff);
+    border-radius: 50%;
+    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+    height: 120px;
+    /*margin: 0 30px 30px 0;*/
+    position: relative;
+    width: 120px;
+    -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 400;
+}
+
+#btn-play:after {
+    color: #e9e6e4;
+    content: "";
+    display: block;
+    font-size: 30px;
+    height: 30px;
+    text-decoration: none;
+    text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
+    position: absolute;
+    width: 30px;
+}
+
+#btn-play:active {
+    background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
+    background-image: linear-gradient(top, #efedec, #f7f4f4);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .4), inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+}
+
+#btn-play:active:after {
+    color: #dbd2d2;
+    text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+}
+
+input {
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 130px;
+    width: 100%;
+}
+
+
+/* Range */
+
+
+/*from https://www.bypeople.com/red-blue-gradient-css-ui-elements/*/
+
+input[type="range"] {
+    background-image: -webkit-linear-gradient(left, hsla(0, 0%, 0%, .1) 45%, transparent 45%), -webkit-linear-gradient(hsla(0, 0%, 0%, .1), hsla(0, 0%, 100%, .1)), -webkit-linear-gradient(left, #f66, #6cf);
+    background-size: 3px 3px, 100% 100%, 100% 100%;
+    border-radius: 25px;
+    box-shadow: inset 0 1px 4px hsla(0, 0%, 0%, .5), inset 0 0 10px hsla(0, 0%, 0%, .5), 0 0 0 1px hsla(0, 0%, 0%, .1), 0 -1px 2px 1px hsla(0, 0%, 0%, .25), 0 1px 1px 1px hsla(0, 0%, 100%, .75), 0 -2px 9px 2px hsla(0, 0%, 100%, .55), 0 1px 10px 1px hsla(0, 0%, 0%, .25);
+    cursor: pointer;
+    height: 20px;
+    position: relative;
+    width: 240px;
+    -webkit-appearance: none;
+    -webkit-transition: .15s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    background-color: #eee;
+    background-image: -webkit-linear-gradient(hsla(0, 0%, 100%, .1), hsla(0, 0%, 0%, .1));
+    border-radius: 25px;
+    box-shadow: inset 0 1px 1px 1px hsla(0, 0%, 100%, 1), inset 0 -1px 1px 1px hsla(0, 0%, 0%, .25), 0 1px 3px 1px hsla(0, 0%, 0%, .5), 0 0 2px hsla(0, 0%, 0%, .25);
+    content: '';
+    display: block;
+    height: 20px;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 20px;
+    -webkit-appearance: none;
+}
+
+.slider-text {
+    font-weight: 400;
+    text-align: center;
+    margin-top: -20px;
+}
+
+
+/*}*/
