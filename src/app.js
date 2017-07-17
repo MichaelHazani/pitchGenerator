@@ -2,12 +2,12 @@ let wai = require('web-audio-ios');
 let Random = require('random-js');
 let Soundfont = require('soundfont-player');
 
-let playInterval = 4000;
+let playInterval = 500;
 let intervals = [];
 let isPlaying = false;
 let speedSlider = document.querySelector("#speedSlider");
-let secText = document.querySelector("#sec");
-let secondsText = document.querySelector("#seconds");
+let bpm = document.querySelector("#bpm-count");
+let bpmText = document.querySelector("#bpm");
 let playButton = document.querySelector("#btn-play");
 let unlockButton = document.querySelector("#btn-unlock");
 let overlay = document.querySelector("#overlay");
@@ -15,6 +15,8 @@ let AudioContextFunc = window.AudioContext || window.webkitAudioContext;
 let audioContext = new AudioContextFunc();
 let notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 let octaves = [3, 4, 5, 6]
+let metHi = document.querySelector("#met-hi");
+let metLow = document.querySelector("#met-low");
 
 let press = () => {
     overlay.setAttribute("style", "visibility: hidden");
@@ -30,6 +32,7 @@ let play = () => {
         Soundfont.instrument(audioContext, 'acoustic_grand_piano').then(function (piano) {
             piano.play(generateRandomNoteValue())
         });
+
         let newInt = setInterval(() => {
             let randNote = generateRandomNoteValue();
             Soundfont.instrument(audioContext, 'acoustic_grand_piano').then(function (piano) {
@@ -47,12 +50,12 @@ let play = () => {
 
 //slider
 speedSlider.oninput = (e) => {
-    secondsText.textContent = " SECONDS";
-    secText.textContent = e.target.value;
+    bpmText.textContent = " BPM";
+    bpm.textContent = e.target.value;
 }
 speedSlider.onchange = (e) => {
     clearIntervals();
-    playInterval = e.target.value * 1000;
+    playInterval = 60 / e.target.value * 1000;
     if (isPlaying) {
         isPlaying = false;
         play();

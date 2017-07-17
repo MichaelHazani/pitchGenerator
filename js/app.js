@@ -1915,12 +1915,12 @@ var wai = require('web-audio-ios');
 var Random = require('random-js');
 var Soundfont = require('soundfont-player');
 
-var playInterval = 4000;
+var playInterval = 500;
 var intervals = [];
 var isPlaying = false;
 var speedSlider = document.querySelector("#speedSlider");
-var secText = document.querySelector("#sec");
-var secondsText = document.querySelector("#seconds");
+var bpm = document.querySelector("#bpm-count");
+var bpmText = document.querySelector("#bpm");
 var playButton = document.querySelector("#btn-play");
 var unlockButton = document.querySelector("#btn-unlock");
 var overlay = document.querySelector("#overlay");
@@ -1928,6 +1928,8 @@ var AudioContextFunc = window.AudioContext || window.webkitAudioContext;
 var audioContext = new AudioContextFunc();
 var notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 var octaves = [3, 4, 5, 6];
+var metHi = document.querySelector("#met-hi");
+var metLow = document.querySelector("#met-low");
 
 var press = function press() {
     overlay.setAttribute("style", "visibility: hidden");
@@ -1944,6 +1946,7 @@ var play = function play() {
         Soundfont.instrument(audioContext, 'acoustic_grand_piano').then(function (piano) {
             piano.play(generateRandomNoteValue());
         });
+
         var newInt = setInterval(function () {
             var randNote = generateRandomNoteValue();
             Soundfont.instrument(audioContext, 'acoustic_grand_piano').then(function (piano) {
@@ -1961,12 +1964,12 @@ var play = function play() {
 
 //slider
 speedSlider.oninput = function (e) {
-    secondsText.textContent = " SECONDS";
-    secText.textContent = e.target.value;
+    bpmText.textContent = " BPM";
+    bpm.textContent = e.target.value;
 };
 speedSlider.onchange = function (e) {
     clearIntervals();
-    playInterval = e.target.value * 1000;
+    playInterval = 60 / e.target.value * 1000;
     if (isPlaying) {
         isPlaying = false;
         play();

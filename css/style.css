@@ -158,5 +158,11 @@ input[type="range"]::-webkit-slider-thumb {
     margin-top: -20px;
 }
 
+.time-signature {
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0px;
+}
+
 
 /*}*/
